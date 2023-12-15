@@ -84,7 +84,8 @@ const compoundTypeKinds: TypeKind[] = ["array", "class", "map", "enum"];
 
 function isValueType(t: Type): boolean {
     const kind = t.kind;
-    return primitiveValueTypeKinds.indexOf(kind) >= 0 || kind === "class" || kind === "enum";
+    // return primitiveValueTypeKinds.indexOf(kind) >= 0 || kind === "class" || kind === "enum";
+    return primitiveValueTypeKinds.indexOf(kind) >= 0 || compoundTypeKinds.indexOf(kind) >= 0;
 }
 
 function canOmitEmpty(cp: ClassProperty): boolean {
